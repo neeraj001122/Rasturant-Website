@@ -1,6 +1,8 @@
 import React from "react";
 import classes from "./Header.module.css";
 import CartButton from "./CartButton";
+import MealsSummary from "./MealsSummary";
+import DummyMeals from "../Meals/DummyMeals";
 
 const Header = () => {
   return (
@@ -9,11 +11,13 @@ const Header = () => {
         <h1>ReactMeals</h1>
         <CartButton></CartButton>
       </header>
-      <div className={classes.main_image}>
+      <div className={classes['main-image']}>
         <img
-          src="https://www.liveabout.com/thmb/kectf9d4azgI8yVnBuoB0h2Z8zA=/3865x2174/smart/filters:no_upscale()/overhead-view-of-smiling-female-friends-sharing-lunch-in-restaurant-928010348-5b4abe8f46e0fb003712c478.jpg"
+          src="https://github.com/academind/react-complete-guide-code/blob/11-practice-food-order-app/extra-files/meals.jpg?raw=true"
           alt="Ramen"
         />
+        <MealsSummary></MealsSummary>
+        <DummyMeals></DummyMeals>
         </div>
     </React.Fragment>
   );
