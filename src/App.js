@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Header from "./components/Layout/Header";
 import Cart from './components/Cart/Cart'
+import CartContextProvider from "./Store/CartContextProvider";
 
 function App() {
   const [cartShown, setCartShown] = useState(false)
@@ -14,10 +15,10 @@ function App() {
   }
 
   return (
-    <div>
+    <CartContextProvider>
       {cartShown && <Cart onClose={cartHideHandler}></Cart>}
       <Header onShown = {cartShownHandler}></Header>
-    </div>
+      </CartContextProvider>
   );
 }
 

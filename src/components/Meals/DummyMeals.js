@@ -32,10 +32,11 @@ const DummyMeals = () => {
           price: 18.99,
         },
       ];
+      
 
       const mealsList = DUMMY_MEALS.map((meals) => {
         return<ul key={meals.name}> 
-            <li className={glasses.meal} >{meals.name} <MealsForm /></li>
+            <li className={glasses.meal} >{meals.name} <MealsForm id={meals.id} item={meals}/></li>
             <li className={glasses.description}>{meals.description}</li>
             <li className={glasses.price}>{meals.price}</li>
           </ul>

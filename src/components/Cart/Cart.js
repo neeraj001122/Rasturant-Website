@@ -1,5 +1,6 @@
 import Modal from '../UI/Modal';
 import classes from './Cart.module.css'
+import CartContextProvider from '../../Store/CartContextProvider';
 
 const Cart = (props) => {
   const cartItem = (
@@ -11,6 +12,7 @@ const Cart = (props) => {
   );
 
   return (
+    <CartContextProvider>
     <Modal onClose={props.onClose}>
       {cartItem}
       <div className={classes.total}>
@@ -22,6 +24,7 @@ const Cart = (props) => {
         <button className={classes.button}>Order</button>
       </div>
     </Modal>
+    </CartContextProvider>
   );
 };
 
