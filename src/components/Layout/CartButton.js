@@ -6,14 +6,17 @@ import CartContext from "../../Store/Cart-context";
 const CartButton = (props) => {
 
   const cartCtx = useContext(CartContext);
-  const numberOfItem = cartCtx.items.length;
+  let count = 0
+   cartCtx.items.forEach((item) => {
+     count = count+Number(item.quantity);
+  })
 
   return (
     <div>
       <button onClick={props.onclick} className={classes.button}>
         <span className={classes.icon}><CartIcon /></span>
         <span>Your Cart</span>
-        <span className={classes.badge}>{numberOfItem}</span>
+        <span className={classes.badge}>{count}</span>
       </button>
     </div>
   );
